@@ -36,10 +36,11 @@ public class StockFileReader {
 	 */
 	public List<String> readFileData() throws IOException{
 		List<String> lines = new ArrayList<String>();
-		try (BufferedReader br = new BufferedReader(new FileReader(filePath))){
-			String line = null;
-			// skip the fist line
+		try(BufferedReader br = new BufferedReader(new FileReader(filePath))){
+			//skip the first line:
 			br.readLine();
+			String line = null;
+			// populate data from next line onwards
 			while((line = br.readLine()) != null){
 				lines.add(line);
 			}

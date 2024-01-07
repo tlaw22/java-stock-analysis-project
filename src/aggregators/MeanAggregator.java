@@ -8,8 +8,8 @@ public class MeanAggregator extends Aggregator{
 		double result = 0;
 		if(!numbers.isEmpty()){
 			double value = 0.00;
-			for(Double number : numbers){
-				value+=number;
+			for(Number number : numbers){
+				value+=number.doubleValue();
 			}
 			result = value/numbers.size();
 		}
